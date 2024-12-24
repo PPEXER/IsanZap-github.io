@@ -1,0 +1,331 @@
+/* Global styles */
+/* สไตล์ปุ่มกลับหน้าแรก */
+/* สไตล์ container ของ header */
+/* สไตล์ container ของ header */
+/* สไตล์ container ของ header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* สไตล์สำหรับข้อความใน header */
+h1 {
+    flex: 1; /* ทำให้ข้อความใช้พื้นที่ว่าง */
+    text-align: center; /* จัดให้ข้อความอยู่กลาง */
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* สไตล์ปุ่มกลับหน้าแรก */
+.back-to-home {
+    background-color: #8c6239;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    margin-left: auto; /* ทำให้ปุ่มไปอยู่ทางขวา */
+}
+
+/* เปลี่ยนสีเมื่อเอาเมาส์ไปชี้ */
+.back-to-home:hover {
+    background-color: #5a4231;
+}
+
+
+/* สไตล์โลโก้ร้าน */
+.logo {
+    width: 100px; /* ปรับขนาดโลโก้ตามที่ต้องการ */
+    height: auto;
+    object-fit: contain;
+}
+
+
+body {
+    font-family: 'Prompt', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f4e7;
+    color: #5a4231;
+}
+
+header {
+    background-color: #8c6239;
+    padding: 20px;
+    text-align: center; /* ทำให้ข้อความอยู่กลาง */
+    color: #fff;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0; /* ปรับ margin ให้เป็น 0 */
+}
+
+
+.order-container {
+    display: flex;
+    margin: 20px;
+}
+
+.menu-categories {
+    width: 25%;
+    padding: 20px;
+    background-color: #fff5e1;
+    border-right: 2px solid #8c6239;
+}
+
+.menu-categories h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.menu-categories ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-categories ul li {
+    margin: 10px 0;
+}
+
+.menu-categories ul li a {
+    text-decoration: none;
+    color: #8c6239;
+    font-size: 1.2em;
+}
+
+.food-menu {
+    width: 75%;
+    padding: 20px;
+    background-color: #ffe8cc;
+}
+
+.food-menu h3 {
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+.menu-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.menu-item p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #5a4231;
+}
+
+
+
+footer {
+    background-color: #8c6239;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .order-container {
+        flex-direction: column;
+    }
+
+    .menu-categories {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .food-menu {
+        width: 100%;
+    }
+}
+/* สไตล์ตะกร้า */
+.cart-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 250px;
+    padding: 20px;
+    background-color: #fff5e1;
+    border: 2px solid #8c6239;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: auto;
+    overflow-y: auto;
+}
+
+.cart-container h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.cart-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-container ul li {
+    margin: 10px 0;
+}
+
+.cart-container p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* สไตล์ปุ่มหยิบใส่ตะกร้า */
+.add-to-cart {
+    background-color: #8c6239;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.add-to-cart:hover {
+    background-color: #5a4231;
+}
+
+
+
+/* การขยายเมนูเมื่อเอาเมาส์ไปชี้ */
+.menu-item {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding-bottom: 60px; /* เพิ่มพื้นที่ด้านล่างเพื่อให้ปุ่มไม่ทับ */
+}
+
+.menu-item:hover {
+    transform: scale(1.05); /* ขยายขนาดเมื่อชี้ */
+    background-color: #f0e6d2; /* เปลี่ยนพื้นหลัง */
+}
+
+/* ให้ปุ่มอยู่ด้านล่างสุด */
+.menu-item button {
+    display: block;
+    margin: 10px auto 0;
+}
+
+
+.menu-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.menu-item p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #5a4231;
+}
+/* เปลี่ยนสีไอคอนกากบาทเป็นสีแดง */
+.remove-item i {
+    color: red;
+}
+/* สไตล์ปุ่มสั่งอาหาร */
+.order-button {
+    background-color: #8c6239;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+/* เปลี่ยนสีเมื่อเอาเมาส์ไปชี้ */
+.order-button:hover {
+    background-color: #5a4231;
+}
+
+/* ฟอร์มการสั่งอาหาร */
+.order-form {
+    background-color: #fff5e1;
+    padding: 20px;
+    border: 1px solid #8c6239;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.order-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.submit-order {
+    background-color: #8c6239;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-order:hover {
+    background-color: #5a4231;
+}
+/* สไตล์สำหรับฟอร์มที่เด้งขึ้นกลางจอ */
+.order-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* ซ่อนฟอร์มเริ่มต้น */
+    z-index: 1000; /* ให้ฟอร์มแสดงอยู่เหนือทุกอย่าง */
+    width: 80%;
+    max-width: 400px;
+}
+
+/* สไตล์สำหรับพื้นหลังมืดๆ ที่ปิดอยู่เมื่อฟอร์มแสดง */
+.order-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* ซ่อนพื้นหลังมืดๆ */
+    z-index: 999; /* ให้พื้นหลังแสดงอยู่ใต้ฟอร์ม */
+}

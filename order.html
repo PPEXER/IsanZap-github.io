@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>หน้าสั่งอาหาร</h1>
+            <button class="back-to-home" onclick="window.location.href='index.html';">กลับหน้าแรก</button>
+            <img src="immage/logo1.webp" alt="โลโก้ร้าน" class="logo">
+        </div>
+    </header>
+    
+    
+    <main>
+        <div class="order-container">
+            <!-- แถบด้านซ้าย (หมวดอาหาร) -->
+            <aside class="menu-categories">
+                <h2>หมวดอาหาร</h2>
+                <ul>
+                    <li><a href="#somtam">ส้มตำ</a></li>
+                    <li><a href="#lab">ลาบ</a></li>
+                    <li><a href="#sai-krok">ไส้กรอก</a></li>
+                    <li><a href="#drink">น้ำ</a></li>
+                    <li><a href="#other">อื่นๆ</a></li>
+                </ul>
+            </aside>
+            <aside id="cart" class="cart-container">
+                <h2>ตะกร้าของคุณ</h2>
+                <p>จำนวนรายการในตะกร้า: <span id="cart-count">0</span></p>
+                <ul id="cart-items">
+                    <!-- รายการที่หยิบใส่ตะกร้าจะถูกเพิ่มที่นี่ -->
+                </ul>
+                <p><strong>รวมทั้งหมด: </strong><span id="total-price">฿0</span></p>
+            
+                <!-- ปุ่มสั่งอาหาร -->
+                <button id="order-button" class="order-button">สั่งอาหาร</button>
+            
+                <!-- ฟอร์มกรอกข้อมูลสำหรับการสั่งอาหาร -->
+                 <!-- พื้นหลังมืดๆ -->
+                <div id="order-form-overlay" class="order-form-overlay"></div>
+
+                <div id="order-form" class="order-form" style="display: none;">
+                    <h3>กรอกข้อมูลการสั่งอาหาร</h3>
+                    <form id="order-details">
+                        <label for="name">ชื่อ:</label>
+                        <input type="text" id="name" name="name" required><br><br>
+                        
+                        <label for="address">ที่อยู่จัดส่ง:</label>
+                        <input type="text" id="address" name="address" required><br><br>
+            
+                        <label for="phone">เบอร์โทร:</label>
+                        <input type="tel" id="phone" name="phone" required><br><br>
+            
+                        <button type="submit" class="submit-order">ยืนยันการสั่ง</button>
+                    </form>
+                </div>
+            </aside>
+            
+            
+             <!-- แสดงเมนูอาหาร -->
+             <section class="food-menu">
+                <div id="somtam">
+                    <h3>ส้มตำ</h3>
+                    <div class="menu-row">
+                        <div class="menu-item">
+                            <img src="immage/สมตำ.jpg" alt="ส้มตำ">
+                            <p>ตำไทย - ฿50</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ตำปลาร้า.jpg" alt="ตำปลาร้า">
+                            <p>ตำปลาร้า - ฿60</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/สมตำ.jpg" alt="ส้มตำปู">
+                            <p>ส้มตำปู - ฿55</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                    </div>
+                
+                
+                    <div class="menu-row">
+                        <div class="menu-item">
+                            <img src="immage/ตำหมูยอ.jpg" alt="ตำหมูยอ">
+                            <p>ตำหมูยอ - ฿60</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ตำข้าวโพด.jpg" alt="ตำข้าวโพด">
+                            <p>ตำข้าวโพด - ฿50</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ตำมะละกอ.jpg" alt="ตำมะละกอ">
+                            <p>ตำมะละกอ - ฿45</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="lab">
+                    <h3>ลาบ</h3>
+                    <div class="menu-row">
+                        <div class="menu-item">
+                            <img src="immage/ลาบหมู.jpg" alt="ลาบหมู">
+                            <p>ลาบหมู - ฿70</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ลาบเนื้อ.jpg" alt="ลาบเนื้อ">
+                            <p>ลาบเนื้อ - ฿75</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ลาบไก่.jpg" alt="ลาบไก่">
+                            <p>ลาบไก่ - ฿65</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                    </div>
+                    <div class="menu-row">
+                        <div class="menu-item">
+                            <img src="immage/ลาบปลา.jpg" alt="ลาบปลา">
+                            <p>ลาบปลา - ฿80</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ลาบมะระ.webp" alt="ลาบมะระ">
+                            <p>ลาบมะระ - ฿70</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ลาบอ่อง.webp" alt="ลาบอ่อง">
+                            <p>ลาบอ่อง - ฿85</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sai-krok">
+                    <h3>ไส้กรอก</h3>
+                    <div class="menu-row">
+                        <div class="menu-item">
+                            <img src="immage/ไส้กรอก.jpg" alt="ไส้กรอกอีสาน">
+                            <p>ไส้กรอกอีสาน - ฿40</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ไส้กรอก.jpg" alt="ไส้กรอกย่าง">
+                            <p>ไส้กรอกย่าง - ฿45</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ไส้กรอก.jpg" alt="ไส้กรอกหมู">
+                            <p>ไส้กรอกหมู - ฿50</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                    </div>
+                    <div class="menu-row">
+                        <div class="menu-item">
+                            <img src="immage/ไส้กรอก.jpg" alt="ไส้กรอกปลา">
+                            <p>ไส้กรอกปลา - ฿60</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ไส้กรอก.jpg" alt="ไส้กรอกผสมข้าว">
+                            <p>ไส้กรอกผสมข้าว - ฿55</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ไส้กรอก.jpg" alt="ไส้กรอกหมูย่าง">
+                            <p>ไส้กรอกหมูย่าง - ฿65</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="drink">
+                    <h3>น้ำ</h3>
+                    <div class="menu-row">
+                        <div class="menu-item">
+                            <img src="immage/น้ำกระเจียบ.webp" alt="น้ำสมุนไพร">
+                            <p>น้ำสมุนไพร - ฿30</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/น้ำมะพร้าว.jpg" alt="น้ำมะพร้าว">
+                            <p>น้ำมะพร้าว - ฿35</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/น้ำตะไคร้.jpg" alt="น้ำตะไคร้">
+                            <p>น้ำตะไคร้ - ฿25</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                    </div>
+                    <div class="menu-row">
+                        <div class="menu-item">
+                            <img src="immage/น้ำเก๊กฮวย.jpg" alt="น้ำเก๊กฮวย">
+                            <p>น้ำเก๊กฮวย - ฿40</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/น้ำส้ม.jpg" alt="น้ำส้ม">
+                            <p>น้ำส้ม - ฿30</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/น้ำมะนาว.jpg" alt="น้ำมะนาว">
+                            <p>น้ำมะนาว - ฿20</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="other">
+                    <h3>อื่นๆ</h3>
+                    <div class="menu-row">
+                        <div class="menu-item">
+                            <img src="immage/ข้าวเหนียว.jpg" alt="ข้าวเหนียว">
+                            <p>ข้าวเหนียว - ฿20</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ไอศกรีม.jpg" alt="ไอศกรีม">
+                            <p>ไอศกรีม - ฿50</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ข้าวเหนียวมะม่วง.webp" alt="ข้าวเหนียวมะม่วง">
+                            <p>ข้าวเหนียวมะม่วง - ฿60</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                    </div>
+                    <div class="menu-row">
+                        <div class="menu-item">
+                            <img src="immage/ซ่าหริ่ม.jpg" alt="ซ่าหริ่ม">
+                            <p>ซ่าหริ่ม - ฿40</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/บัวลอย.jpg" alt="บัวลอย">
+                            <p>บัวลอย - ฿35</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="immage/ข้าวเหนียวปิ้ง.jpg" alt="ข้าวเหนียวปิ้ง">
+                            <p>ข้าวเหนียวปิ้ง - ฿25</p>
+                            <button class="add-to-cart">หยิบลงตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ร้านอีสานแซ่บ. All rights reserved.</p>
+    </footer>
+    <script src="order.js"></script>
+</body>
+</html>

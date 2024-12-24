@@ -1,0 +1,201 @@
+/* สไตล์สำหรับ GIF ที่ด้านบนขวาของหน้าเว็บ */
+.gif-top-right {
+    position: absolute;
+    top: 150px; /* ระยะห่างจากด้านบนของหน้าเว็บ */
+    right: 20px; /* ระยะห่างจากด้านขวาของหน้าเว็บ */
+    width: 140px; /* ขนาดของ GIF */
+    height: auto;
+    z-index: 9999; /* ทำให้ GIF อยู่เหนือเนื้อหาทั้งหมด */
+}
+
+/* สไตล์สำหรับข้อความวิ่ง */
+.marquee-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #f9f4e7;
+    color: #5a4231;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    z-index: 9999;
+    white-space: nowrap; /* ให้ข้อความไม่ตัดบรรทัด */
+    width: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.marquee-text {
+    display: inline-block;
+    animation: marquee 15s linear infinite; /* ควบคุมความเร็วของข้อความ */
+}
+
+/* สไตล์การเลื่อนข้อความ */
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f4e7; /* Natural, earthy background color */
+    color: #5a4231; /* Warm brown text color */
+}
+
+header {
+    background-color: #8c6239; /* Earthy brown header color */
+    padding: 20px;
+    text-align: left;
+    color: #fff;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #fff;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.left-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff5e1; /* Light beige box for contrast */
+    border-right: 2px solid #8c6239;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.right-section {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffe8cc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* ให้ .right-section เป็นตำแหน่งอ้างอิง */
+}
+
+.order-button {
+    position: absolute; /* ตั้งตำแหน่งปุ่มแบบ absolute */
+    bottom: 20px; /* ให้ปุ่มอยู่ที่ด้านล่าง */
+    left: 50%; /* จัดตำแหน่งปุ่มให้อยู่กลาง */
+    transform: translateX(-50%); /* จัดให้อยู่กลางจริง ๆ */
+    padding: 20px 40px;
+    font-size: 1.5em;
+    background-color: #8c6239;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #5a4231;
+}
+
+
+.food-slider {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-item {
+    display: none;
+    text-align: center;
+}
+
+.slider-item.active {
+    display: block;
+}
+
+.food-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.food-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+h3 {
+    margin-top: 10px;
+    color: #8c6239;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #8c6239;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5a4231;
+}
+
+footer {
+    background-color: #8c6239;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left-section {
+        border-right: none;
+        margin-bottom: 20px;
+    }
+
+    .right-section {
+        padding: 10px;
+    }
+
+    .food-slider {
+        max-width: 100%;
+    }
+}
